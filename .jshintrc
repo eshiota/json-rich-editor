@@ -1,0 +1,18 @@
+{
+  "regexdash": true,
+  "browser": true,
+  "wsh": false,
+  "trailing": true,
+  "sub": true,
+  "laxcomma": true,
+  "laxbreak": true,
+  "eqeqeq": true,
+  "curly": true,
+  "boss": true,
+  "forin": false,
+  "newcap": false,
+  "noarg": true,
+  "maxdepth": 2,
+  "devel": false,
+  "jquery": true
+}
