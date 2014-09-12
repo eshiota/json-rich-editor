@@ -1,0 +1,41 @@
+.jre-value,
+.jre-keyvalue {
+  zoom: 1; }
+  .jre-value:after,
+  .jre-keyvalue:after {
+    clear: both;
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden; }
+
+.jre,
+.jre * {
+  box-sizing: border-box; }
+
+.jre fieldset {
+  margin: 0;
+  border: none;
+  padding: 0; }
+
+.jre-value-stringornumber,
+.jre-value-null {
+  width: 100%;
+  font-size: 100%;
+  padding: 0.25em 0.5em; }
+
+.jre .jre-keyvalue {
+  padding: 0.65625em 0.875em;
+  background: #f2f2f2;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3) inset;
+  border-radius: 3px; }
+  .jre .jre-keyvalue > .jre-key {
+    width: 20%;
+    float: left; }
+  .jre .jre-keyvalue > .jre-value {
+    width: 80%;
+    float: left; }
+
+.jre .jre-value-array > .jre-value-array {
+  margin-left: 20%; }

@@ -9,13 +9,13 @@ body {
 
 #editor {
     float: left;
-    width: 50%;
+    width: 60%;
     padding-right: 15px;
 }
 
 #json {
     float: left;
-    width: 50%;
+    width: 40%;
     padding-left: 15px;
 }
 

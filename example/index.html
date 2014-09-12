@@ -4,7 +4,7 @@
     <head>
         <title>JSON Rich Editor example</title>
 
-        <link href="../src/css/json-rich-editor.css" rel="stylesheet" type="text/css" />
+        <link href="../build/json-rich-editor.css" rel="stylesheet" type="text/css" />
         <link href="example.css" rel="stylesheet" type="text/css" />
     </head>
 
@@ -13,17 +13,133 @@
 
         <div id="editor">
             <h2>Rich Editor</h2>
+
+            <div id="json-editor">
+            </div>
+
+            <div>
+                <!--<form class="jre">
+                    <fieldset class="jre-value jre-value-object">
+                        <fieldset class="jre-keyvalue">
+                            <label class="jre-label">foo</label>
+
+                            <input class="jre-value jre-value-stringornumber" type="text" value="bar" />
+                        </fieldset>
+
+                        <fieldset class="jre-keyvalue">
+                            <label class="jre-label">myArray</label>
+
+                            <fieldset class="jre-value jre-value-array">
+                                <fieldset class="jre-value jre-value-object">
+                                    <fieldset class="jre-keyvalue">
+                                        <label class="jre-label">innerstring</label>
+
+                                        <input class="jre-value jre-value-stringornumber" type="text" value="foobar" />
+                                    </fieldset>
+
+                                    <fieldset class="jre-keyvalue">
+                                        <label class="jre-label">innerarray</label>
+
+                                        <fieldset class="jre-value jre-value-array">
+                                            <fieldset class="jre-value jre-value-object">
+                                                <label class="jre-label">name</label>
+
+                                                <input class="jre-value jre-value-stringornumber" type="text" value="John" />
+                                            </fieldset>
+
+                                            <fieldset class="jre-value jre-value-object">
+                                                <label class="jre-label">name</label>
+
+                                                <input class="jre-value jre-value-stringornumber" type="text" value="Snow" />
+                                            </fieldset>
+
+                                            <input class="jre-value jre-value-stringornumber" type="text" value="lonelyboy" />
+                                        </fieldset>
+                                    </fieldset>
+
+                                    <fieldset class="jre-keyvalue">
+                                        <label class="jre-label">innernumber</label>
+
+                                        <input class="jre-value jre-value-stringornumber" type="text" value="1234" />
+                                    </fieldset>
+                                </fieldset>
+
+                                <input class="jre-value jre-value-stringornumber" type="text" value="foreveralone" />
+                            </fieldset>
+                        </fieldset>
+
+                        <fieldset class="jre-keyvalue">
+                            <label class="jre-label">myNumber</label>
+
+                            <input class="jre-value jre-value-stringornumber" type="text" value="13498" />
+                        </fieldset>
+
+                        <fieldset class="jre-keyvalue">
+                            <label class="jre-label">myObject</label>
+
+                            <fieldset class="jre-value jre-value-object">
+                                <fieldset class="jre-keyvalue">
+                                    <label class="jre-label">fullname</label>
+
+                                    <input class="jre-value jre-value-stringornumber" type="text" value="John Doe" />
+                                </fieldset>
+
+                                <fieldset class="jre-keyvalue">
+                                    <label class="jre-label">age</label>
+
+                                    <input class="jre-value jre-value-stringornumber" type="text" value="57" />
+                                </fieldset>
+                            </fieldset>
+                        </fieldset>
+                    </fieldset>
+                </form>-->
+            </div>
         </div>
 
         <div id="json">
             <h2>JSON</h2>
-<textarea rows="10" cols="30">
-{
-    "foo" : "bar"
-}
-</textarea>
+
+<textarea rows="10" cols="30">{
+    "foo" : "bar",
+    "myArray" : [
+        {
+            "innerstring" : "foobar",
+            "innerarray" : [
+                {
+                    "name" : "John"
+                },
+                {
+                    "name" : "Snow"
+                },
+                "lonelyboy",
+                [
+                    "arrays are cool",
+                    "nested arrays are cooler",
+                    [
+                        "we're going too deep",
+                        {
+                            "opinion" : "agreed"
+                        }
+                    ]
+                ]
+            ],
+            "innernumber" : 1234,
+            "innerobject" : {
+                "name" : "banana",
+                "color" : "yellow"
+            }
+        },
+        "foreveralone"
+    ],
+    "myNumber" : 13498,
+    "myObject" : {
+        "fullname" : "John Doe",
+        "age" : 57
+    }
+}</textarea>
         </div>
 
         <script src="../lib/jquery-1.11.1.js"></script>
+        <script src="../build/json-rich-editor.js"></script>
     </body>
 </html>

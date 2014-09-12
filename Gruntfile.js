@@ -53,6 +53,8 @@ module.exports = function(grunt) {
 
     config.concat.bundle = {
         src : [
+            "lib/handlebars.runtime-v1.3.0.js",
+            "src/js/templates.js",
             "src/js/json-rich-editor.js"
         ],
         dest : "build/json-rich-editor.js"
@@ -78,8 +80,8 @@ module.exports = function(grunt) {
     };
 
     config.watch.js = {
-        files : ["src/js/**/*.js"],
-        tasks : ["jshint", "concat"]
+        files : ["src/js/**/*.js", "src/hbs/**/*.hbs", "!src/js/templates.js"],
+        tasks : ["jshint", "handlebars", "concat"]
     };
 
     //==========================================================
@@ -87,14 +89,27 @@ module.exports = function(grunt) {
     config.handlebars = {};
 
     config.handlebars.compile = {
-        files : {
-            "src/js/templates.js" : ["hbs/**/*"]
-        }
+        options : {
+            namespace : "JRE.templates",
+            partialsUseNamespace : true,
+            partialRegex: /^_.*\.hbs$/,
+            processName: function(fileName) {
+            var bits = fileName.split("/");
+            return bits[bits.length - 1].replace(".hbs", "");
+          },
+
+          processPartialName: function(fileName) {
+            var bits = fileName.split("/");
+            return bits[bits.length - 1].slice(1).replace(".hbs", "");
+          }
+        },
+        src : "src/hbs/**/*.hbs",
+        dest : "src/js/templates.js"
     };
 
     //==========================================================
 
     grunt.initConfig(config);
     tasks.forEach(grunt.loadNpmTasks);
-    grunt.registerTask("default", ["sass:compile", "jshint", "concat", "watch"]);
+    grunt.registerTask("default", ["sass:compile", "jshint", "handlebars", "concat", "watch"]);
 };

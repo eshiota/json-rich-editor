@@ -1,0 +1,57 @@
+@import "base/variables";
+@import "base/functions";
+@import "base/helpers";
+
+.jre,
+.jre * {
+    box-sizing: border-box;
+}
+
+.jre fieldset {
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+
+.jre-value,
+.jre-keyvalue {
+    @extend %clearfix;
+}
+
+.jre-value-stringornumber,
+.jre-value-null {
+    width: 100%;
+    font-size: 100%;
+    padding: em(4px) em(8px);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//  Key-Value
+////////////////////////////////////////////////////////////////////////////////
+
+.jre .jre-keyvalue {
+    padding: em(.5*$baseline) em(14px);
+    background: #f2f2f2;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .3) inset;
+    border-radius: 3px;
+
+    > .jre-key {
+        width: 20%;
+        float: left;
+    }
+
+    > .jre-value {
+        width: 80%;
+        float: left;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//  Arrays
+////////////////////////////////////////////////////////////////////////////////
+
+.jre .jre-value-array {
+    > .jre-value-array {
+        margin-left: 20%;
+    }
+}
